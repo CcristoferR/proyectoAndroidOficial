@@ -26,25 +26,11 @@ public class EliminarTareaActivity extends AppCompatActivity {
         listaTareas = findViewById(R.id.listaTareas);
         botonEliminar = findViewById(R.id.botonEliminar);
 
-        // Configurar el listener para el botón "Eliminar"
-        botonEliminar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Lógica para eliminar la tarea seleccionada
-                eliminarTareaSeleccionada();
-            }
-        });
-
         // Ajustar los insets de la vista
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-    }
-
-    private void eliminarTareaSeleccionada() {
-        // Implementa aquí la lógica para eliminar la tarea seleccionada
-        // Por ejemplo, eliminar de la base de datos
     }
 }

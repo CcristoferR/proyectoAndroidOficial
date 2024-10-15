@@ -28,9 +28,21 @@
         android:layout_height="wrap_content"
         android:hint="Selecciona Prioridad" />
 
+    <Spinner
+        android:id="@+id/spinnerEtiquetas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Selecciona Etiqueta" />
+
     <Button
-        android:id="@+id/botonGuardar"
+        android:id="@+id/botonGuardarCambios"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Guardar Cambios" />
+
+    <Button
+        android:id="@+id/botonCancelar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancelar" />
 </LinearLayout>
