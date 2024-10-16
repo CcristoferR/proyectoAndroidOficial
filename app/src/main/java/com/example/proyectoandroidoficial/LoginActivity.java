@@ -1,15 +1,8 @@
 package com.example.proyectoandroidoficial;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-
-
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -29,6 +22,12 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin = findViewById(R.id.buttonLogin);
         buttonRegister = findViewById(R.id.buttonRegister);
 
-        // Aquí podrías agregar la lógica más adelante
+        // Acción para el botón de registro
+        buttonRegister.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, RegistroActivity.class);
+            startActivity(intent);
+        });
+
+        // Aquí podrías agregar la lógica para el botón de login
     }
 }

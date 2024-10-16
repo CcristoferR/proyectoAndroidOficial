@@ -12,11 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoAndroidOficial"
         tools:targetApi="31">
-
-
+        <activity
+            android:name=".RegistroActivity"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
