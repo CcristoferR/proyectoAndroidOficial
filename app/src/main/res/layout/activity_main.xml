@@ -5,150 +5,132 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gestión de Tareas"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ir_crear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="24dp" />
 
     <Button
         android:id="@+id/btn_ir_crear"
-        android:layout_width="110dp"
-        android:layout_height="48dp"
-        android:text="Crear"
-        android:onClick="openAgregarTareaActivity"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Crear Tarea"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo"
+        android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/btn_ir_editar"
-        android:layout_width="97dp"
-        android:layout_height="51dp"
-        android:text="Editar"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Editar Tarea"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.075" />
-
+        app:layout_constraintTop_toBottomOf="@+id/btn_ir_crear"
+        android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/btn_ir_eliminar"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Eliminar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.877"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.079" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="241dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="4dp"
-        android:gravity="center"
-        android:text="ORGANIZATE"
+        android:text="Eliminar Tarea"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TableLayout
-        android:id="@+id/tbl_tareas"
-        android:layout_width="413dp"
-        android:layout_height="298dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.815">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </TableLayout>
+        app:layout_constraintTop_toBottomOf="@+id/btn_ir_editar"
+        android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/btn_ir_historial"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Historial"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="Ver Historial"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ir_eliminar"
+        android:layout_marginBottom="16dp" />
 
     <Button
         android:id="@+id/btn_cerrar_sesion"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@android:color/holo_red_light"
         android:text="Cerrar Sesión"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="77dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="112dp"
-        android:gravity="center"
-        android:text="Filtrar por:"
+        android:backgroundTint="@android:color/holo_red_light"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_ir_historial"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:id="@+id/textViewFiltrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filtrar por:"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cerrar_sesion"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp" />
 
     <Spinner
         android:id="@+id/filtracion_estado"
-        android:layout_width="235dp"
-        android:layout_height="52dp"
-        app:layout_constraintBottom_toTopOf="@+id/tbl_tareas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFiltrar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:layout_constraintVertical_bias="0.042" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
 
     <Spinner
         android:id="@+id/filtracion_prioridad"
-        android:layout_width="235dp"
-        android:layout_height="52dp"
-        app:layout_constraintBottom_toTopOf="@+id/tbl_tareas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/filtracion_estado"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
 
     <Spinner
         android:id="@+id/filtracion_categoria"
-        android:layout_width="235dp"
-        android:layout_height="52dp"
-        app:layout_constraintBottom_toTopOf="@+id/tbl_tareas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/filtracion_prioridad"
-        app:layout_constraintVertical_bias="0.211" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
 
+    <TableLayout
+        android:id="@+id/tbl_tareas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/filtracion_categoria"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
 
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
-

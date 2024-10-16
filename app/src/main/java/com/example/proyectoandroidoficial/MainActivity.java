@@ -45,6 +45,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Configura el botón para abrir la actividad de historial
+        Button btnIrHistorial = findViewById(R.id.btn_ir_historial);
+        btnIrHistorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivityHistorial();
+            }
+        });
+
         // Ajustar los insets de la vista
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -65,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void openEliminarTareaActivity() {
         Intent intent = new Intent(MainActivity.this, EliminarTareaActivity.class);
+        startActivity(intent);
+    }
+
+    private void openActivityHistorial() {
+        Intent intent = new Intent(MainActivity.this, ActivityHistorial.class);
         startActivity(intent);
     }
 }
