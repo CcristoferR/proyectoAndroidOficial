@@ -54,6 +54,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Configura el botón para cerrar sesión
+        Button btnCerrarSesion = findViewById(R.id.btn_cerrar_sesion);
+        btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cerrarSesion();
+            }
+        });
+
         // Ajustar los insets de la vista
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -80,5 +89,17 @@ public class MainActivity extends AppCompatActivity {
     private void openActivityHistorial() {
         Intent intent = new Intent(MainActivity.this, ActivityHistorial.class);
         startActivity(intent);
+    }
+
+    private void cerrarSesion() {
+        // Clear user session data (if any)
+        // For example: SharedPreferences preferences = getSharedPreferences("my_prefs", MODE_PRIVATE);
+        // preferences.edit().clear().apply();
+
+        // Navigate to the login screen
+        Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK); // Clear the activity stack
+        startActivity(intent);
+        finish(); // Finish the current activity
     }
 }
