@@ -1,6 +1,7 @@
 package com.example.proyectoandroidoficial;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Button;
@@ -28,6 +29,17 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // Aquí podrías agregar la lógica para el botón de login
+        // Acción para el botón de inicio de sesión
+        buttonLogin.setOnClickListener(v -> {
+            // Validar las credenciales (esto debe incluir tu lógica de autenticación)
+            // Suponiendo que la validación fue exitosa:
+            SharedPreferences preferences = getSharedPreferences("my_prefs", MODE_PRIVATE);
+            preferences.edit().putBoolean("isLoggedIn", true).apply();
+
+            // Inicia la actividad principal
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish(); // Opcional: cerrar esta actividad
+        });
     }
 }
