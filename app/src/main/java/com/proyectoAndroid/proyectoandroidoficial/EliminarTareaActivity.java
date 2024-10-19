@@ -1,4 +1,4 @@
-package com.example.proyectoandroidoficial;
+package com.proyectoAndroid.proyectoandroidoficial;
 
 import android.os.Bundle;
 import android.view.View;
