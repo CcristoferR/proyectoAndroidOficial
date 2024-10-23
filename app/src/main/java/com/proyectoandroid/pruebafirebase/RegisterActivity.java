@@ -27,19 +27,24 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register); // Asegúrate de que este archivo exista y esté correcto
+        setContentView(R.layout.activity_register); // Ensure this file exists and is correct
 
-        // Inicializa Firebase Auth
+        // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        // Encuentra los elementos de UI
+        // Find UI elements
         emailEditText = findViewById(R.id.emailEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         registerButton = findViewById(R.id.registerButton);
+        Button backButton = findViewById(R.id.backButton); // Back Button
 
-        // Configura el listener para el botón de registro
+        // Set click listener for the register button
         registerButton.setOnClickListener(v -> createAccount());
+
+        // Set click listener for the back button
+        backButton.setOnClickListener(v -> finish()); // Finishes the current activity and returns to the previous one
     }
+
 
     @Override
     public void onStart() {

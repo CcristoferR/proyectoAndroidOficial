@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText passwordEditText;
     private Button loginButton;
     private Button registerButton;  // Botón de registro
+    private Button recoverPasswordButton;  // Botón para recuperar contraseña
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.passwordEditText);
         loginButton = findViewById(R.id.loginButton);
         registerButton = findViewById(R.id.registerButton);  // Encuentra el botón de registro
+        recoverPasswordButton = findViewById(R.id.recoverPasswordButton);  // Encuentra el botón para recuperar contraseña
 
         // Configura el listener para el botón de inicio de sesión
         loginButton.setOnClickListener(v -> signIn());
@@ -49,6 +51,9 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
             startActivity(intent);
         });
+
+        // Configura el listener para el botón de recuperar contraseña
+        recoverPasswordButton.setOnClickListener(v -> recoverPassword());
     }
 
     private void signIn() {
@@ -90,5 +95,28 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish(); // Cierra esta actividad
         }
+    }
+
+    private void recoverPassword() {
+        String email = emailEditText.getText().toString().trim();
+
+        // Validar si el correo electrónico no está vacío
+        if (email.isEmpty()) {
+            Toast.makeText(MainActivity.this, "Por favor ingresa tu correo electrónico.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Solicitar el enlace de restablecimiento de contraseña
+        mAuth.sendPasswordResetEmail(email)
+                .addOnCompleteListener(this, new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(MainActivity.this, "Enlace de recuperación enviado a tu correo.", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(MainActivity.this, "Error al enviar el enlace: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 }

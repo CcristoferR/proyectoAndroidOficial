@@ -38,4 +38,11 @@
         android:text="Registrarse"
         android:layout_marginTop="8dp" />
 
+    <Button
+        android:id="@+id/recoverPasswordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recuperar Contraseña" />
+
+
 </LinearLayout>
