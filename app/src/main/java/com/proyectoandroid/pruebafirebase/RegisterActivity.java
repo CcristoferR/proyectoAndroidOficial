@@ -39,6 +39,10 @@ public class RegisterActivity extends AppCompatActivity {
     private static final int RC_SIGN_IN = 9001;
 
     @Override
+
+
+
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register); // Asegúrate de que este layout exista
@@ -155,6 +159,11 @@ public class RegisterActivity extends AppCompatActivity {
                             // Inicio de sesión exitoso
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI(user);
+
+                            // Redirigir al HomeActivity
+                            Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
+                            startActivity(intent);
+                            finish();  // Finaliza la actividad actual para que el usuario no pueda volver con el botón 'atrás'
                         } else {
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             updateUI(null);
