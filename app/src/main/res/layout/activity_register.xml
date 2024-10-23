@@ -53,4 +53,13 @@
         android:layout_below="@id/registerButton"
         android:layout_marginTop="16dp"
         android:text="Volver" />
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/googleSignInButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign in with Google"
+        android:layout_below="@id/loginButton"
+        android:layout_marginTop="300dp" />
+
 </RelativeLayout>

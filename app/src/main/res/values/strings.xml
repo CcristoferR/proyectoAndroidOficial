@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">pruebafirebase</string>
+    <string name="default_web_client_id">503008586073-m383p6p4tn846jvfn23sqvhp28edo3o4.apps.googleusercontent.com</string>
+
 </resources>
