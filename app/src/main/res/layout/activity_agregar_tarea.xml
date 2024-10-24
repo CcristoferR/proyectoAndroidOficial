@@ -1,0 +1,56 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editarTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Título" />
+
+    <EditText
+        android:id="@+id/editarDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descripción" />
+
+    <EditText
+        android:id="@+id/editarFechaLimite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fecha Límite (YYYY-MM-DD)" />
+
+    <Spinner
+        android:id="@+id/spinnerPrioridad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Selecciona Prioridad" />
+
+    <Spinner
+        android:id="@+id/spinnerEtiquetas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Selecciona Etiqueta" />
+
+    <Button
+        android:id="@+id/botonGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Guardar Tarea" />
+
+    <Button
+        android:id="@+id/botonCancelar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancelar" />
+
+    <!-- Botón para volver a MainActivity -->
+    <Button
+        android:id="@+id/botonVolver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volver a Inicio" />
+</LinearLayout>

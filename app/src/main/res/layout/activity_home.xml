@@ -1,16 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    tools:context=".MainActivity"
     android:padding="16dp">
 
     <TextView
+        android:id="@+id/textViewTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¡Bienvenido a la Home Activity!"
+        android:text="Gestión de Tareas"
         android:textSize="24sp"
-        android:layout_gravity="center" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ir_crear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="24dp" />
 
-    <!-- Aquí puedes agregar más elementos para tu pantalla principal -->
-</LinearLayout>
+    <Button
+        android:id="@+id/btn_ir_crear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Crear Tarea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitulo"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_ir_editar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Editar Tarea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ir_crear"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_ir_eliminar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Eliminar Tarea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ir_editar"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_ir_historial"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ver Historial"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ir_eliminar"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_cerrar_sesion"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Cerrar Sesión"
+        android:backgroundTint="@android:color/holo_red_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_ir_historial"
+        android:layout_marginTop="24dp" />
+
+    <TextView
+        android:id="@+id/textViewFiltrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filtrar por:"
+        app:layout_constraintTop_toBottomOf="@+id/btn_cerrar_sesion"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <Spinner
+        android:id="@+id/filtracion_estado"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFiltrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <Spinner
+        android:id="@+id/filtracion_prioridad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/filtracion_estado"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <Spinner
+        android:id="@+id/filtracion_categoria"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/filtracion_prioridad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <TableLayout
+        android:id="@+id/tbl_tareas"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/filtracion_categoria"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
