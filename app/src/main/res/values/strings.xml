@@ -44,4 +44,14 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
 
+    <string-array name="prioridades">
+        <item>Alta</item>
+        <item>Media</item>
+        <item>Baja</item>
+    </string-array>
+    <string-array name="etiquetas">
+        <item>Trabajo</item>
+        <item>Personal</item>
+        <item>Urgente</item>
+    </string-array>
 </resources>

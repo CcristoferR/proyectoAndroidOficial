@@ -41,6 +41,7 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.constraintlayout)
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
     testImplementation(libs.junit)
@@ -51,6 +52,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth")
     implementation ("com.google.android.material:material:1.9.0")
     implementation ("com.google.android.gms:play-services-auth:20.6.0")
+    implementation ("com.google.firebase:firebase-database:20.0.5")
 
 
 }
