@@ -48,6 +48,14 @@
             android:textSize="12sp"
             android:textColor="#FF6F61"
             android:layout_marginTop="4dp" />
+        <TextView
+            android:id="@+id/textViewEtiqueta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Etiqueta: Trabajo"
+            android:textSize="12sp"
+            android:textColor="#FF6F61"
+            android:layout_marginTop="4dp" />
 
         <TextView
             android:id="@+id/textViewPrioridad"

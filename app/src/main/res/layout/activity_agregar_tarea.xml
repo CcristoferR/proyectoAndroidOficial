@@ -9,43 +9,60 @@
         android:id="@+id/editarTitulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Título" />
+        android:hint="Título"
+        android:layout_marginBottom="16dp" /> <!-- Margen inferior para espaciado -->
 
     <EditText
         android:id="@+id/editarDescripcion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Descripción" />
+        android:hint="Descripción"
+        android:layout_marginBottom="16dp" /> <!-- Margen inferior para espaciado -->
 
     <EditText
         android:id="@+id/editarFechaLimite"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Fecha Límite (YYYY-MM-DD)" />
+        android:hint="Fecha Límite (YYYY-MM-DD)"
+        android:layout_marginBottom="16dp" /> <!-- Margen inferior para espaciado -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona Prioridad:"
+        android:layout_marginBottom="8dp" /> <!-- Margen inferior para espaciado -->
 
     <Spinner
         android:id="@+id/spinnerPrioridad"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Selecciona Prioridad" />
+        android:layout_marginBottom="16dp" /> <!-- Margen inferior para espaciado -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selecciona Etiqueta:"
+        android:layout_marginBottom="8dp" /> <!-- Margen inferior para espaciado -->
 
     <Spinner
         android:id="@+id/spinnerEtiquetas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Selecciona Etiqueta" />
+        android:layout_marginBottom="16dp" /> <!-- Margen inferior para espaciado -->
 
     <Button
         android:id="@+id/botonGuardar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Guardar Tarea" />
+        android:text="Guardar Tarea"
+        android:layout_marginBottom="8dp" /> <!-- Margen inferior para espaciado -->
 
     <Button
         android:id="@+id/botonCancelar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cancelar" />
+        android:text="Cancelar"
+        android:layout_marginBottom="8dp" /> <!-- Margen inferior para espaciado -->
 
     <!-- Botón para volver a MainActivity -->
     <Button
@@ -53,4 +70,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Volver a Inicio" />
+
 </LinearLayout>

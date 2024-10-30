@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
 public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHolder> {
@@ -28,7 +29,8 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHol
         holder.tituloTextView.setText(tarea.getTitulo());
         holder.descripcionTextView.setText(tarea.getDescripcion());
         holder.fechaTextView.setText(tarea.getFechaLimite());
-        holder.prioridadTextView.setText(tarea.getPrioridad()); // Asegúrate de que este campo exista en tu modelo
+        holder.prioridadTextView.setText("Prioridad: " + tarea.getPrioridad()); // Change this if needed
+        holder.etiquetaTextView.setText("Etiqueta: " + tarea.getEtiqueta()); // Display the selected tag
     }
 
     @Override
@@ -37,6 +39,7 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHol
     }
 
     public static class TareaViewHolder extends RecyclerView.ViewHolder {
+        TextView etiquetaTextView; // Corrected to TextView
         TextView tituloTextView;
         TextView descripcionTextView;
         TextView fechaTextView;
@@ -44,10 +47,11 @@ public class TareaAdapter extends RecyclerView.Adapter<TareaAdapter.TareaViewHol
 
         public TareaViewHolder(View itemView) {
             super(itemView);
-            tituloTextView = itemView.findViewById(R.id.textViewTituloTarea); // Cambiado
-            descripcionTextView = itemView.findViewById(R.id.textViewDescripcionTarea); // Cambiado
-            fechaTextView = itemView.findViewById(R.id.textViewFechaTarea); // Cambiado
-            prioridadTextView = itemView.findViewById(R.id.textViewPrioridad); // Asegúrate de que este ID exista
+            tituloTextView = itemView.findViewById(R.id.textViewTituloTarea);
+            descripcionTextView = itemView.findViewById(R.id.textViewDescripcionTarea);
+            fechaTextView = itemView.findViewById(R.id.textViewFechaTarea);
+            prioridadTextView = itemView.findViewById(R.id.textViewPrioridad);
+            etiquetaTextView = itemView.findViewById(R.id.textViewEtiqueta); // Initialize etiquetaTextView
         }
     }
 }
