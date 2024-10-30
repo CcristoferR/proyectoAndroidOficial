@@ -1,6 +1,6 @@
 package com.proyectoandroid.pruebafirebase;
 
-import android.content.Intent; // Asegúrate de importar Intent
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -53,10 +54,21 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // Inicializar el botón para cerrar sesión
+        Button btnCerrarSesion = findViewById(R.id.btn_cerrar_sesion);
+        btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cerrarSesion();
+            }
+        });
     }
 
     private void cargarTareas() {
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid(); // Obtener el ID del usuario autenticado
+
+        databaseReference.orderByChild("usuarioId").equalTo(userId).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 listaTareas.clear(); // Limpiar la lista antes de cargar
@@ -72,5 +84,14 @@ public class HomeActivity extends AppCompatActivity {
                 // Manejo de errores si es necesario
             }
         });
+    }
+
+    private void cerrarSesion() {
+        FirebaseAuth.getInstance().signOut(); // Cerrar sesión de Firebase
+        // Navegar a la pantalla de inicio de sesión
+        Intent intent = new Intent(HomeActivity.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK); // Limpiar la pila de actividades
+        startActivity(intent);
+        finish(); // Finalizar esta actividad
     }
 }

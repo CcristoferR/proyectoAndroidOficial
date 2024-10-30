@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -81,6 +82,9 @@ public class AgregarTareaActivity extends AppCompatActivity {
             return;
         }
 
+        // Obtener el ID del usuario autenticado
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+
         // Crear el objeto de tarea con los datos
         Map<String, Object> tarea = new HashMap<>();
         tarea.put("titulo", titulo);
@@ -89,6 +93,7 @@ public class AgregarTareaActivity extends AppCompatActivity {
         tarea.put("prioridad", prioridad);
         tarea.put("etiqueta", etiqueta);
         tarea.put("estado", "pendiente");
+        tarea.put("usuarioId", userId); // Asociar la tarea al usuario
 
         // Enviar la tarea a Firebase
         databaseReference.push().setValue(tarea).addOnCompleteListener(task -> {
