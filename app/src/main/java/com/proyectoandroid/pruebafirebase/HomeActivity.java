@@ -55,6 +55,17 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        // Inicializar el botón para ir al historial
+        Button btnIrHistorial = findViewById(R.id.btn_ir_historial);
+        btnIrHistorial.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Navegar a la actividad de historial
+                Intent intent = new Intent(HomeActivity.this, ActivityHistorial.class);
+                startActivity(intent);
+            }
+        });
+
         // Inicializar el botón para cerrar sesión
         Button btnCerrarSesion = findViewById(R.id.btn_cerrar_sesion);
         btnCerrarSesion.setOnClickListener(new View.OnClickListener() {
