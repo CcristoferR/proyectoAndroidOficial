@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -27,7 +28,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="8dp"
         app:cardBackgroundColor="#FFFFFF"
@@ -37,49 +37,49 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:padding="16dp">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_ir_crear"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Crear Tarea"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_marginBottom="8dp"
                 android:backgroundTint="#5C6BC0"
-                android:textColor="#FFFFFF"
-                android:layout_marginBottom="8dp" />
+                android:text="Crear Tarea"
+                android:textColor="#FFFFFF" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_ir_editar"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Editar Tarea"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_marginBottom="8dp"
                 android:backgroundTint="#42A5F5"
-                android:textColor="#FFFFFF"
-                android:layout_marginBottom="8dp" />
+                android:text="Editar Tarea"
+                android:textColor="#FFFFFF" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_ir_eliminar"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Eliminar Tarea"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_marginBottom="8dp"
                 android:backgroundTint="#FF7043"
-                android:textColor="#FFFFFF"
-                android:layout_marginBottom="8dp" />
+                android:text="Eliminar Tarea"
+                android:textColor="#FFFFFF" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_ir_historial"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Ver Historial"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_marginBottom="8dp"
                 android:backgroundTint="#26A69A"
-                android:textColor="#FFFFFF"
-                android:layout_marginBottom="8dp" />
+                android:text="Ver Historial"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -137,21 +137,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="8dp" />
 
-    <TableLayout
-        android:id="@+id/tbl_tareas"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTareas"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:background="#ECEFF1"
-        android:padding="12dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@id/filtracion_categoria"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="4dp">
-
-        <!-- Add rows dynamically here -->
-    </TableLayout>
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
