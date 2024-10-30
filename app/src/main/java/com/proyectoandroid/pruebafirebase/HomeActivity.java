@@ -37,7 +37,15 @@ public class HomeActivity extends AppCompatActivity {
         listaTareas = new ArrayList<>();
         tareaAdapter = new TareaAdapter(listaTareas);
         recyclerViewTareas.setAdapter(tareaAdapter);
+        Button botonIrEliminar = findViewById(R.id.botonIrEliminar);
 
+        botonIrEliminar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, EliminarTareaActivity.class);
+                startActivity(intent); // Start EliminarTareaActivity
+            }
+        });
         // Inicializar la referencia de Firebase
         databaseReference = FirebaseDatabase.getInstance().getReference("tareas");
 

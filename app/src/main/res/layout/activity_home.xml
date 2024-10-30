@@ -62,7 +62,7 @@
                 android:textColor="#FFFFFF" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_ir_eliminar"
+                android:id="@+id/botonIrEliminar"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -83,7 +84,12 @@ public class AgregarTareaActivity extends AppCompatActivity {
         }
 
         // Obtener el ID del usuario autenticado
-        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if (currentUser == null) {
+            Toast.makeText(this, "Debes estar autenticado para agregar tareas", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        String userId = currentUser.getUid();
 
         // Crear el objeto de tarea con los datos
         Map<String, Object> tarea = new HashMap<>();
@@ -99,10 +105,17 @@ public class AgregarTareaActivity extends AppCompatActivity {
         databaseReference.push().setValue(tarea).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 Toast.makeText(AgregarTareaActivity.this, "Tarea guardada exitosamente", Toast.LENGTH_SHORT).show();
+                // Limpiar campos después de guardar
+                editarTitulo.setText("");
+                editarDescripcion.setText("");
+                editarFechaLimite.setText("");
+                spinnerPrioridad.setSelection(0); // Reset priority
+                spinnerEtiquetas.setSelection(0); // Reset etiqueta
                 finish();
             } else {
                 Toast.makeText(AgregarTareaActivity.this, "Error al guardar la tarea", Toast.LENGTH_SHORT).show();
             }
         });
     }
+
 }

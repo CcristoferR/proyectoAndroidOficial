@@ -29,12 +29,7 @@
         android:id="@+id/botonCancelar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cancelar" />
+        android:text="Volver" />
 
     <!-- Botón Volver agregado -->
-    <Button
-        android:id="@+id/botonVolver"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Volver" />
 </LinearLayout>

@@ -1,38 +1,39 @@
 package com.proyectoandroid.pruebafirebase;
 
 public class Tarea {
-    private String id; // O cualquier otro campo identificador
+    private String id; // Identifier field for Firebase
     private String titulo;
     private String descripcion;
     private String fechaLimite;
     private String prioridad;
     private String etiqueta;
-    private String estado; // Nuevo campo para el estado
-    private String usuarioId; // Añadir este campo
+    private String estado; // Field for the task status
+    private String usuarioId; // Field for the user ID
 
-    // Constructor vacío requerido por Firebase
+    // Default constructor required for Firebase
     public Tarea() {
     }
 
-    public Tarea(String titulo, String descripcion, String fechaLimite, String prioridad, String etiqueta, String estado, String usuarioId) {
+    // Constructor to initialize all fields including ID
+    public Tarea(String id, String titulo, String descripcion, String fechaLimite, String prioridad, String etiqueta, String estado, String usuarioId) {
+        this.id = id; // Initialize ID
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.fechaLimite = fechaLimite;
-        this.prioridad = prioridad; // Asegúrate de que la prioridad sea válida si es necesario
+        this.prioridad = prioridad; // Ensure priority is valid if needed
         this.etiqueta = etiqueta;
-        this.estado = estado; // Inicialización del nuevo campo
-        this.usuarioId = usuarioId; // Inicializa el nuevo campo
+        this.estado = estado; // Initialize the state
+        this.usuarioId = usuarioId; // Initialize the user ID
     }
 
-    // Valida que la prioridad sea una de las permitidas
+    // Method to validate that the priority is one of the allowed values
     private void validarPrioridad(String prioridad) {
         if (!prioridad.equals("alta") && !prioridad.equals("media") && !prioridad.equals("baja")) {
             throw new IllegalArgumentException("La prioridad debe ser alta, media o baja.");
         }
     }
 
-    // Getters y setters
-
+    // Getters and setters
     public String getId() {
         return id;
     }
@@ -61,11 +62,11 @@ public class Tarea {
         return etiqueta;
     }
 
-    public String getEstado() { // Getter para el nuevo campo
-        return estado;
+    public String getEstado() {
+        return estado; // Getter for the state
     }
 
-    public void setEstado(String estado) { // Setter para el nuevo campo
+    public void setEstado(String estado) { // Setter for the state
         this.estado = estado;
     }
 
@@ -82,10 +83,25 @@ public class Tarea {
     }
 
     public String getUsuarioId() {
-        return usuarioId; // Ahora debería funcionar
+        return usuarioId; // Getter for user ID
     }
 
     public void setUsuarioId(String usuarioId) {
-        this.usuarioId = usuarioId; // Ahora debería funcionar
+        this.usuarioId = usuarioId; // Setter for user ID
+    }
+
+    // Optional: Override toString for better logging
+    @Override
+    public String toString() {
+        return "Tarea{" +
+                "id='" + id + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", fechaLimite='" + fechaLimite + '\'' +
+                ", prioridad='" + prioridad + '\'' +
+                ", etiqueta='" + etiqueta + '\'' +
+                ", estado='" + estado + '\'' +
+                ", usuarioId='" + usuarioId + '\'' +
+                '}';
     }
 }
