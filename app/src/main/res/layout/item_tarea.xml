@@ -4,8 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
+    android:background="#263238"
     app:cardElevation="4dp"
     app:cardCornerRadius="8dp">
+
+    <!-- Fondo oscuro para la tarjeta -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +23,9 @@
             android:text="Título de la tarea"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="#37474F" />
+            android:textColor="#FFFFFF" />
+
+        <!-- Texto blanco para mejor contraste -->
 
         <TextView
             android:id="@+id/textViewDescripcionTarea"
@@ -28,8 +33,10 @@
             android:layout_height="wrap_content"
             android:text="Descripción de la tarea"
             android:textSize="14sp"
-            android:textColor="#546E7A"
+            android:textColor="#CFD8DC"
             android:layout_marginTop="4dp" />
+
+        <!-- Gris claro para subtítulos -->
 
         <TextView
             android:id="@+id/textViewFechaTarea"
@@ -46,16 +53,21 @@
             android:layout_height="wrap_content"
             android:text="Estado: Pendiente"
             android:textSize="12sp"
-            android:textColor="#FF6F61"
+            android:textColor="#FFAB91"
             android:layout_marginTop="4dp" />
+
+        <!-- Naranja suave para el estado -->
+
         <TextView
             android:id="@+id/textViewEtiqueta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Etiqueta: Trabajo"
             android:textSize="12sp"
-            android:textColor="#FF6F61"
+            android:textColor="#FFAB91"
             android:layout_marginTop="4dp" />
+
+        <!-- Naranja suave para la etiqueta -->
 
         <TextView
             android:id="@+id/textViewPrioridad"
@@ -63,8 +75,10 @@
             android:layout_height="wrap_content"
             android:text="Prioridad: Alta"
             android:textSize="12sp"
-            android:textColor="#FF6F61"
+            android:textColor="#FFAB91"
             android:layout_marginTop="4dp" />
+
+        <!-- Naranja suave para la prioridad -->
 
     </LinearLayout>
 
